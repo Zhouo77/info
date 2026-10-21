@@ -6,15 +6,16 @@
  }
 
  body {
-     color: black;
-    background-color: #F4F5F7;
+     color: #2D3748;
+     background-color: #e2e8f4;
  }
 
  /*---------------- 顶部导航栏---------------- */
  header {
      height: 100px;
      top: 0;
-     background-color: #FAFAFA;
+     /* #E2E8F0 浅灰蓝 */
+     background-color: #1E293B;
      /* 让 logo 和导航在一行 */
      display: flex;
      /* 垂直居中 */
@@ -27,6 +28,7 @@
      position: sticky;
      /* 防止被卡片盖住 */
      z-index: 100;
+     color: #1A202C;
  }
 
  header ul {
@@ -43,11 +45,12 @@
      /* 去掉下划线 */
      text-decoration: none;
      font-size: 25px;
-
+     color: #fff;
+     transition: color 0.3s;
  }
 
  header ul li a:hover {
-     color: #6A809B;
+     color: #667D87;
  }
 
 
@@ -63,13 +66,13 @@
      border-radius: 20px;
      margin: 0 0 20px;
      padding: 20px;
-     background-color: #a4b4f4;
-     box-shadow: 0 4px 12px royalblue;
+     background-color: #91C9DD;
+     box-shadow: 0 4px 12px #609eb5;
      transition: background-color 0.5s ease;
  }
 
  section:hover {
-     background-color: #95a7f0;
+     background-color: #b3d8e5;
      /* color: #fff; */
  }
 
@@ -94,8 +97,9 @@
  .profile_title {
      flex: 0 0 auto;
      padding: 20px 24px;
-     background-color: #a9bafd;
+     background-color: #9cd1e4;
      color: #fff;
+     font-weight: bold;
      border-radius: 10px;
      display: flex;
      align-items: center;
@@ -115,7 +119,7 @@
  .profile_divider {
      flex: 0 0 2px;
      align-self: stretch;
-     background-color: #5897e3;
+     background-color: #43b9e4;
      border-radius: 2px;
  }
 
@@ -144,18 +148,20 @@
 
  .profile_label {
      flex-shrink: 0;
-     color: #0374ff;
+     color: #EDF9FC;
      font-weight: 600;
  }
 
  .profile_value {
-     color: #1a1a1a;
+     color: #424040;
+     font-weight: bold;
      word-break: break-word;
  }
 
  /* 电话、邮箱链接 */
  a.profile_value {
-     color: #1a1a1a;
+     color: #424040;
+     font-weight: bold;
      text-decoration: none;
      border-bottom: 1px dashed transparent;
      transition: color 0.2s, border-color 0.2s;
@@ -163,7 +169,7 @@
 
  a.profile_value:hover {
      color: #6A809B;
-     border-bottom-color: #6A809B;
+     border-bottom-color: #b3dded;
  }
 
  /* --------自我介绍-------- */
@@ -173,7 +179,7 @@
      min-height: 200px;
      /* 防止打字过程高度抖动 */
      padding: 20px 24px;
-     background-color: #c3cdf5;
+     background-color: #b3dded;
      border-radius: 20px;
      transition: background-color 0.5s ease;
      /* 关键：在 section 内不需要下边距 */
@@ -186,7 +192,7 @@
      width: 2px;
      height: 1.1em;
      margin-left: 2px;
-     background: #6A809B;
+     background: rgb(108, 133, 163);
      vertical-align: -0.15em;
      animation: blink 0.8s step-end infinite;
  }
@@ -248,7 +254,7 @@
  }
 
  .skill ul li:hover {
-     background-color:#adcdf9;
+     background-color: #adcdf9;
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
  }
 
@@ -256,7 +262,7 @@
  .program {
      font-size: 20px;
      border-radius: 20px;
-     background-color: #e2e3e6;
+     background-color: #D9D5FC;
      padding: 20px 24px;
      margin-bottom: 24px;
  }
@@ -275,7 +281,7 @@
 
  .program_name {
      font-size: 20px;
-     color: #6A809B;
+     color: #6456e0;
      line-height: 1.4;
  }
 
@@ -283,9 +289,10 @@
      display: flex;
      gap: 16px;
      font-size: 20px;
-     color: #525252;
+     color: #6456e0;
      /* 自动占满左侧剩余空间，把时间和岗位推到最右边 */
      margin-left: auto;
+     font-weight: 500;
  }
 
  /* 描述、技术栈这类整行块 */
@@ -295,7 +302,7 @@
 
  .program_block h4 {
      font-size: 17px;
-     color: #6A809B;
+     color: #6456e0;
      margin-bottom: 8px;
  }
 
@@ -318,12 +325,13 @@
  /* 单个技术标签 */
  .tech_tags span {
      padding: 4px 12px;
-     background-color: #e0e7ff;
-     color: #6A809B;
+     background-color: #c3bdfa;
+     color: #6456e0;
      border-radius: 20px;
      /* 大圆角，形成胶囊形状 */
      font-size: 18px;
      line-height: 1.6;
+     font-weight: 500;
  }
 
 
@@ -339,7 +347,7 @@
 
  .program_cards h4 {
      font-size: 17px;
-     color: #6A809B;
+     color: #6456e0;
      margin-bottom: 8px;
  }
 
@@ -347,16 +355,16 @@
  .program_card {
      flex: 1 1 calc(50% - 8px);
      min-width: 260px;
-     background-color: #f5f7ff;
+     background-color: #c2bdf1;
      border-radius: 12px;
      padding: 16px;
-     border-left: 6px solid #6A809B;
+     border-left: 6px solid #9086e3;
 
  }
 
  .program_card h4 {
      font-size: 17px;
-     color: #6A809B;
+     color: #6456e0;
      margin-bottom: 8px;
  }
 
@@ -376,7 +384,7 @@
      margin-top: 10px;
      padding: 20px;
      font-size: 25px;
-     background-color: rgb(107, 107, 180);
+     background-color: #506B8B;
      text-align: center;
      display: flex;
      flex-direction: column;
