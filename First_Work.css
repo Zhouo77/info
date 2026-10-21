@@ -1,0 +1,547 @@
+ /* 全局盒模型 */
+ * {
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+ }
+
+ body {
+     color: black;
+ }
+
+ /*---------------- 顶部导航栏---------------- */
+ header {
+     height: 100px;
+     top: 0;
+     background-color: rgb(234, 249, 255);
+     /* 让 logo 和导航在一行 */
+     display: flex;
+     /* 垂直居中 */
+     align-items: center;
+     /* 左右留白 */
+     padding: 0 150px;
+     /* logo 靠左，导航靠右 */
+     justify-content: space-between;
+     /* 导航栏固定顶部 */
+     position: sticky;
+     /* 防止被卡片盖住 */
+     z-index: 100;
+ }
+
+ header ul {
+     /* 让 li 横向排列 */
+     display: flex;
+     align-items: center;
+     /* 菜单项间距 */
+     gap: 40px;
+     /* 去掉小圆点 */
+     list-style: none;
+ }
+
+ header ul li a {
+     /* 去掉下划线 */
+     text-decoration: none;
+     font-size: 25px;
+
+ }
+
+ header ul li a:hover {
+     color: #2F54EB;
+ }
+
+
+ /* ------------------内容栏------------------- */
+ main {
+     margin: 20px 0;
+     padding: 0 150px;
+     line-height: 1.8;
+ }
+
+ /* ----------------个人简介卡片---------------- */
+ section {
+     border-radius: 20px;
+     margin:0 0 20px;
+     padding: 20px;
+     background-color: #a4b4f4;
+     box-shadow: 0 4px 12px royalblue;
+     transition: background-color 0.5s ease;
+ }
+
+ section:hover {
+     background-color: #95a7f0;
+     /* color: #fff; */
+ }
+
+ .profile_section {
+     display: flex;
+     flex-direction: row;
+     align-items: stretch;
+     /* 左右等高 */
+     gap: 24px;
+ }
+
+ .profile_wrap {
+     flex: 1;
+     min-width: 0;
+     display: flex;
+     flex-direction: row;
+     align-items: stretch;
+     gap: 24px;
+ }
+
+ /* --------左侧标题块-------- */
+ .profile_title {
+     flex: 0 0 auto;
+     padding: 20px 24px;
+     background-color: #a9bafd;
+     color: #fff;
+     border-radius: 10px;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 8px;
+     line-height: 1.2;
+     text-align: center;
+     white-space: nowrap;
+ }
+
+ .profile_title svg {
+     flex-shrink: 0;
+ }
+
+
+ /* --------中间竖线-------- */
+ .profile_divider {
+     flex: 0 0 2px;
+     align-self: stretch;
+     background-color: #2F54EB;
+     border-radius: 2px;
+ }
+
+ /* ------右侧信息列表------ */
+ .profile_fields {
+     flex: 1;
+     min-width: 0;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     gap: 16px;
+     list-style: none;
+ }
+
+ .profile_item {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     font-size: 20px;
+     line-height: 1.6;
+ }
+
+ .profile_item svg {
+     flex-shrink: 0;
+ }
+
+ .profile_label {
+     flex-shrink: 0;
+     color: #2F54EB;
+     font-weight: 600;
+ }
+
+ .profile_value {
+     color: #1a1a1a;
+     word-break: break-word;
+ }
+
+ /* 电话、邮箱链接 */
+ a.profile_value {
+     color: #1a1a1a;
+     text-decoration: none;
+     border-bottom: 1px dashed transparent;
+     transition: color 0.2s, border-color 0.2s;
+ }
+
+ a.profile_value:hover {
+     color: #2F54EB;
+     border-bottom-color: #2F54EB;
+ }
+
+ /* --------自我介绍-------- */
+ .info {
+     flex: 1;
+     font-size: 20px;
+     min-height: 200px;
+     /* 防止打字过程高度抖动 */
+     padding: 20px 24px;
+     background-color: #c3cdf5;
+     border-radius: 20px;
+     transition: background-color 0.5s ease;
+     /* 关键：在 section 内不需要下边距 */
+     margin-bottom: 0;
+ }
+
+ /* 打字光标 */
+ .cursor {
+     display: inline-block;
+     width: 2px;
+     height: 1.1em;
+     margin-left: 2px;
+     background: #2F54EB;
+     vertical-align: -0.15em;
+     animation: blink 0.8s step-end infinite;
+ }
+
+ @keyframes blink {
+     50% {
+         opacity: 0;
+     }
+ }
+
+ .cursor.done {
+     animation: none;
+     opacity: 0;
+ }
+
+ /* 技能和项目小标题 */
+ .program p,
+ .skill p {
+     display: flex;
+     align-items: center;
+     gap: 8px;
+     margin-bottom: 12px;
+ }
+
+ /* ----------------个人技能卡片区---------------- */
+ .skill {
+     font-size: 20px;
+     /* 文字不贴边 */
+     padding: 20px 24px;
+     margin-bottom: 24px;
+     background-color: bisque;
+     border-radius: 20px;
+     /* 悬停上浮 */
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+ }
+
+ .skill :hover {
+     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+ }
+
+ .skill p {
+     border-radius: 10px;
+     padding: 8px 12px;
+ }
+
+ .skill ul {
+     border-radius: 15px;
+ }
+
+ .skill ul li {
+     list-style: none;
+     background-color: bisque;
+     transition: background-color 0.5s ease;
+     border-radius: 10px;
+     /* 每条技能像小卡片 */
+     padding: 8px 12px;
+     /* 条与条之间留缝 */
+     margin-bottom: 8px;
+ }
+
+ .skill ul li:hover {
+     background-color: rgb(249, 213, 170);
+ }
+
+ /* ----------------项目展示区---------------- */
+ .program {
+     font-size: 20px;
+     border-radius: 20px;
+     background-color: #e2e3e6;
+     padding: 20px 24px;
+     margin-bottom: 24px;
+ }
+
+ .program_header {
+     display: flex;
+     /* 一行放不下时允许换行，窄屏不会溢出 */
+     flex-wrap: wrap;
+     /* 基线对齐，文字大小不同时底部对齐更自然 */
+     align-items: baseline;
+     gap: 12px;
+     padding-bottom: 10px;
+     margin-bottom: 16px;
+     border-bottom: 2px solid #c3cdf5;
+ }
+
+ .program_name {
+     font-size: 20px;
+     color: #2F54EB;
+     line-height: 1.4;
+ }
+
+ .program_meta {
+     display: flex;
+     gap: 16px;
+     font-size: 20px;
+     color: #525252;
+     /* 自动占满左侧剩余空间，把时间和岗位推到最右边 */
+     margin-left: auto;
+ }
+
+ /* 描述、技术栈这类整行块 */
+ .program_block {
+     margin-bottom: 16px;
+ }
+
+ .program_block h4 {
+     font-size: 17px;
+     color: #2F54EB;
+     margin-bottom: 8px;
+ }
+
+ .program_block p {
+     font-size: 18px;
+     line-height: 1.8;
+     color: #333;
+     text-indent: 2em;
+ }
+
+ /* 技术栈标签容器 */
+ .tech_tags {
+     /* 标签横向排列 */
+     display: flex;
+     /* 一行放不下自动换行 */
+     flex-wrap: wrap;
+     gap: 8px;
+ }
+
+ /* 单个技术标签 */
+ .tech_tags span {
+     padding: 4px 12px;
+     background-color: #e0e7ff;
+     color: #2F54EB;
+     border-radius: 20px;
+     /* 大圆角，形成胶囊形状 */
+     font-size: 18px;
+     line-height: 1.6;
+ }
+
+
+ /* 项目内容卡片容器 */
+ .program_cards {
+     display: flex;
+     /* 卡片用 flex 排列 */
+     flex-wrap: wrap;
+     /* 一行放不下自动换行，实现两列效果 */
+     gap: 16px;
+
+ }
+
+ .program_cards h4 {
+     font-size: 17px;
+     color: #2F54EB;
+     margin-bottom: 8px;
+ }
+
+ /* 单个内容卡片 */
+ .program_card {
+     flex: 1 1 calc(50% - 8px);
+     min-width: 260px;
+     background-color: #f5f7ff;
+     border-radius: 12px;
+     padding: 16px;
+     border-left: 6px solid #2F54EB;
+
+ }
+
+ .program_card h4 {
+     font-size: 17px;
+     color: #2F54EB;
+     margin-bottom: 8px;
+ }
+
+ .program_card p {
+     font-size: 17px;
+     line-height: 1.8;
+     color: #333;
+     text-indent: 2em;
+ }
+
+
+
+
+ /* ----------------底部导航栏---------------- */
+ footer {
+     height: 150px;
+     margin-top: 10px;
+     padding: 20px;
+     font-size: 25px;
+     background-color: rgb(107, 107, 180);
+     text-align: center;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+ }
+
+ .copyright {
+     font-size: 16px;
+     color: #fff;
+     line-height: 1.6;
+ }
+
+ .footer-sub {
+     font-size: 14px;
+     color: rgba(255, 255, 255, 0.75);
+     /* 半透明白，弱化副标题 */
+     line-height: 1.6;
+ }
+
+ /* 响应式布局 */
+ /* ---------- 平板 ≤1024px ---------- */
+ @media (max-width: 1024px) {
+     header {
+         padding: 0 40px;
+     }
+
+     main {
+         padding: 0 40px;
+     }
+
+     header ul {
+         gap: 24px;
+     }
+
+     header ul li a {
+         font-size: 20px;
+     }
+
+     .skill,
+     .program,
+     section {
+         font-size: 20px;
+     }
+ }
+
+ /* ---------- 手机 ≤768px ---------- */
+ @media (max-width: 768px) {
+     header {
+         height: auto;
+         padding: 12px 20px;
+         flex-wrap: wrap;
+         /* 放不下就换行 */
+         gap: 12px;
+     }
+
+     header ul {
+         gap: 16px;
+         flex-wrap: wrap;
+     }
+
+     header ul li a {
+         font-size: 16px;
+     }
+
+     header .icon {
+         width: 36px;
+         height: 36px;
+     }
+
+     main {
+         padding: 0 16px;
+     }
+
+     .profile_section {
+         flex-direction: column;
+         /* 上下排列 */
+         gap: 16px;
+     }
+
+     .profile_wrap {
+         flex-direction: column;
+         /* 左侧内部也上下排 */
+         gap: 16px;
+     }
+
+     .info {
+         min-height: auto;
+         /* 手机上不需要固定最小高度 */
+     }
+
+     .skill,
+     .program,
+     section,
+     footer {
+         font-size: 16px;
+     }
+
+     .skill,
+     .program,
+     section {
+         padding: 16px;
+     }
+
+     section {
+         min-height: 0;
+         margin-bottom: 16px;
+     }
+
+     .skill ul li {
+         padding: 8px 10px;
+         margin-bottom: 6px;
+     }
+
+
+     .profile_title {
+         width: 100%;
+         padding: 12px;
+     }
+
+     .profile_divider {
+         flex: 0 0 auto;
+         width: 100%;
+         height: 2px;
+     }
+
+     .profile_fields {
+         gap: 12px;
+     }
+
+     .profile_item {
+         font-size: 16px;
+     }
+ }
+
+ /* ---------- 小手机 ≤480px ---------- */
+ @media (max-width: 480px) {
+     header ul {
+         gap: 10px;
+     }
+
+     header ul li a {
+         font-size: 14px;
+     }
+
+     .info,
+     .skill,
+     .program,
+     section {
+         padding: 12px;
+         border-radius: 12px;
+     }
+
+     .skill,
+     .program,
+     section,
+     footer {
+         font-size: 14px;
+     }
+
+     .profile_item {
+         font-size: 14px;
+         gap: 8px;
+     }
+
+     .profile_item svg {
+         width: 20px;
+         height: 20px;
+     }
+ }
