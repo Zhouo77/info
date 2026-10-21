@@ -7,13 +7,14 @@
 
  body {
      color: black;
+    background-color: #F4F5F7;
  }
 
  /*---------------- 顶部导航栏---------------- */
  header {
      height: 100px;
      top: 0;
-     background-color: rgb(234, 249, 255);
+     background-color: #FAFAFA;
      /* 让 logo 和导航在一行 */
      display: flex;
      /* 垂直居中 */
@@ -114,7 +115,7 @@
  .profile_divider {
      flex: 0 0 2px;
      align-self: stretch;
-     background-color: #6A809B;
+     background-color: #5897e3;
      border-radius: 2px;
  }
 
@@ -143,7 +144,7 @@
 
  .profile_label {
      flex-shrink: 0;
-     color: #6A809B;
+     color: #0374ff;
      font-weight: 600;
  }
 
@@ -216,7 +217,7 @@
      /* 文字不贴边 */
      padding: 20px 24px;
      margin-bottom: 24px;
-     background-color: bisque;
+     background-color: #cce1ff;
      border-radius: 20px;
      /* 悬停上浮 */
      /* transition: transform 0.3s ease, box-shadow 0.3s ease; */
@@ -237,7 +238,7 @@
 
  .skill ul li {
      list-style: none;
-     background-color: bisque;
+     background-color: #bcd6fb;
      transition: transform 0.5s ease, box-shadow 0.3s ease;
      border-radius: 10px;
      /* 每条技能像小卡片 */
@@ -247,7 +248,7 @@
  }
 
  .skill ul li:hover {
-     background-color: rgb(249, 213, 170);
+     background-color:#adcdf9;
      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
  }
 
