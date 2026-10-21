@@ -238,7 +238,7 @@
  .skill ul li {
      list-style: none;
      background-color: bisque;
-     transition: background-color 0.5s ease;
+     /* transition: background-color 0.5s ease; */
      border-radius: 10px;
      /* 每条技能像小卡片 */
      padding: 8px 12px;
@@ -246,9 +246,9 @@
      margin-bottom: 8px;
  }
 
- .skill ul li:hover {
+ /* .skill ul li:hover {
      background-color: rgb(249, 213, 170);
- }
+ } */
 
  /* ----------------项目展示区---------------- */
  .program {
